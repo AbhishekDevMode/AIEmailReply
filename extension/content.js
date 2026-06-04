@@ -60,7 +60,8 @@ function injectButton() {
 
       const emailContent = getEmailContent();
       const response = await fetch(
-        `${import.meta.env.VITE_API_BASE_URL}/api/generate`,
+        `https://aiemailreply-2.onrender.com
+`,
         {
           method: "POST",
           headers: {
