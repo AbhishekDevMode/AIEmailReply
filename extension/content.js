@@ -60,7 +60,7 @@ function injectButton() {
 
       const emailContent = getEmailContent();
       const response = await fetch(
-        "https://aiemailreply-2.onrender.com",
+        "https://aiemailreply-2.onrender.com/api/email/generate",
         {
           method: "POST",
           headers: {
