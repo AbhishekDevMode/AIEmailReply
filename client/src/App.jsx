@@ -13,7 +13,7 @@ function App() {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/generate`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/email/generate`, {
        emailContent,
        tone 
       });
