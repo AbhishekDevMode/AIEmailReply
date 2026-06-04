@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import { Box, Button, CircularProgress, Container, FormControl, Input, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 
@@ -14,7 +13,7 @@ function App() {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.post("http://localhost:8080/api/email/generate", {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/generate`, {
        emailContent,
        tone 
       });
