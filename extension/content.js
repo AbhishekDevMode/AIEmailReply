@@ -59,19 +59,22 @@ function injectButton() {
       button.style.pointerEvents = "none";
 
       const emailContent = getEmailContent();
-      const response = await fetch("http://localhost:8080/api/email/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          emailContent: emailContent,
-          tone: "professional",
-          senderName: "Abhishek Vishwakarma",
-          senderTitle: "IT Professional",
-          senderContact: "72vishwa@gmail.com"
-        })
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/api/generate`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            emailContent: emailContent,
+            tone: "professional",
+            senderName: "Abhishek Vishwakarma",
+            senderTitle: "IT Professional",
+            senderContact: "72vishwa@gmail.com"
+          })
+        }
+      );
 
       if (!response.ok) {
         throw new Error("API Request Failed");
