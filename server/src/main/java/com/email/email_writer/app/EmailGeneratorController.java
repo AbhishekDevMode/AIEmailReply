@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/email")
+@RequestMapping("/api")
 @AllArgsConstructor
 @CrossOrigin(origins = {"https://mail.google.com", "https://ai-email-reply3.vercel.app"}, 
   allowedHeaders = "*", 
