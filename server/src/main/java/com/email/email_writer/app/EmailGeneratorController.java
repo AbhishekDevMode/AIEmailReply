@@ -12,9 +12,11 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/api")
 @AllArgsConstructor
-@CrossOrigin(origins = {"https://mail.google.com", "https://ai-email-reply3.vercel.app"}, 
-  allowedHeaders = "*", 
-  allowCredentials = "true")
+@CrossOrigin(origins = {"https://mail.google.com", "https://aiemailreply-2.onrender.com"},
+        allowedHeaders = "*",
+        allowCredentials = "true"
+        // methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS}
+)
 
 public class EmailGeneratorController {
 
