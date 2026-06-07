@@ -59,8 +59,9 @@ function injectButton() {
       button.style.pointerEvents = "none";
 
       const emailContent = getEmailContent();
-      const response = await fetch(
-        "https://aiemailreply-2.onrender.com/api/email/generate",
+      
+      const response = await fetch("https://aiemailreply-2.onrender.com/api/generate",
+      
         {
           method: "POST",
           headers: {
