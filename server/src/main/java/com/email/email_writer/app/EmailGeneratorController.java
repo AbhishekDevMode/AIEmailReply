@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
@@ -12,12 +13,12 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/api")
 @AllArgsConstructor
-@CrossOrigin(origins = {"https://mail.google.com", "https://aiemailreply-2.onrender.com"},
-        allowedHeaders = "*",
-        allowCredentials = "true"
-        // methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS}
+@CrossOrigin(
+    origins = {"https://mail.google.com"},
+    allowedHeaders = "*",
+    allowCredentials = "true",
+    methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS}  // UNCOMMENT this line
 )
-
 public class EmailGeneratorController {
 
     private final EmailGeneratorService emailGeneratorService;
