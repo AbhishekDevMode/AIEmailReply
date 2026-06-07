@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
     origins = {"https://mail.google.com"},
     allowedHeaders = "*",
     allowCredentials = "true",
-    methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS}  // UNCOMMENT this line
+    methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS}
 )
 public class EmailGeneratorController {
 

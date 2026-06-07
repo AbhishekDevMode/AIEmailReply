@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { Box, Button, CircularProgress, Container, FormControl, Input, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, Container, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import axios from 'axios';
+import './App.css';
 
 function App() {
   const [emailContent, setEmailContent] = useState('');
@@ -27,12 +28,12 @@ function App() {
   };
 
   return (
-    <Container maxWidth="md" sx={{py:4}}>
-      <Typography variant='h3' component="h1" gutterBottom>
+    <Container maxWidth="md" sx={{py:4}} className='app-container'>
+      <Typography variant='h3' component="h1" className='header-title' gutterBottom>
         Email Reply Generator
       </Typography>
 
-      <Box sx={{ mx: 3 }}>
+      <Box className="input-section" sx={{ mx: 3 }}>
         <TextField 
           fullWidth
           multiline
@@ -43,7 +44,7 @@ function App() {
           onChange={(e) => setEmailContent(e.target.value)}
           sx={{ mb:2 }}/>
 
-          <FormControl fullWidth sx={{ mb:2 }}>
+          <FormControl fullWidth sx={{ mb:3 }}>
             <InputLabel>Tone (Optional)</InputLabel>
             <Select
               value={tone || ''}
@@ -57,6 +58,7 @@ function App() {
           </FormControl>
 
           <Button
+          className='generate-btn'
             variant='contained'
             onClick={handleSubmit}
             disabled={!emailContent || loading}
@@ -72,7 +74,7 @@ function App() {
       )}
 
       {generatedReply && (
-       <Box sx={{ mt: 3}}>
+       <Box sx={{ mt: 3}} className="result-section">
           <Typography variant='h6' gutterBottom>
             Generated Reply:
           </Typography>
@@ -86,6 +88,7 @@ function App() {
         
         <Button
           variant='outlined'
+          className='copy-btn'
           sx={{ mt: 2 }}
           onClick={() => navigator.clipboard.writeText(generatedReply)}>
             Copy to Clipboard
