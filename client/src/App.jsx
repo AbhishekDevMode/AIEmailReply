@@ -56,7 +56,7 @@ function App() {
         Email Reply Generator
       </Typography>
       <p>
-        This is for demo ,to user the extension you would have to install in the
+        This is for demo , to use the extension you would have to install in the
         browser.
       </p>
       <Box className="input-section" sx={{ mx: 3 }}>
