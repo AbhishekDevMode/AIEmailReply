@@ -53,6 +53,7 @@ function injectButton() {
 
   button.addEventListener("click", async (e) => {
     e.preventDefault();
+    
     try {
       button.innerHTML = "Generating...";
       button.disabled = true;
@@ -101,7 +102,6 @@ function injectButton() {
       button.style.pointerEvents = "auto";
     }
   });
-
   toolbar.insertBefore(button, toolbar.firstChild);
 }
 
